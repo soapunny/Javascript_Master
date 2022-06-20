@@ -1,0 +1,859 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  width: 90%;
+}
+
+.fixedScreen {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+}
+
+body .loginPopup {
+  display: none;
+}
+
+body .popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 33.3%;
+}
+
+body .popup .loginSection {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: zoomin;
+          animation-name: zoomin;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  top: 5%;
+  position: absolute;
+  overflow: scroll;
+  z-index: 1000;
+  background-color: white;
+  width: 33.3%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 3% 15% 6% 1fr;
+      grid-template-rows: 3% 15% 6% 1fr;
+  height: 90%;
+}
+
+@-webkit-keyframes zoomin {
+  from {
+    -webkit-transform: scale(0.1, 0.1);
+            transform: scale(0.1, 0.1);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes zoomin {
+  from {
+    -webkit-transform: scale(0.1, 0.1);
+            transform: scale(0.1, 0.1);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+body .popup .loginSection .close {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  padding-right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+body .popup .loginSection .close:hover {
+  cursor: pointer;
+}
+
+body .popup .loginSection .greeting {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+body .popup .loginSection nav {
+  padding-left: 5%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (max-content)[2];
+      grid-template-columns: repeat(2, -webkit-max-content);
+      grid-template-columns: repeat(2, max-content);
+  -ms-grid-rows: 5vh;
+      grid-template-rows: 5vh;
+  -ms-flex-line-pack: end;
+      align-content: end;
+  border-bottom-width: 0.05rem;
+  border-bottom-style: solid;
+  border-bottom-color: lightgray;
+}
+
+body .popup .loginSection nav div:hover {
+  cursor: pointer;
+  color: #006aff;
+}
+
+body .popup .loginSection nav .signInMenu {
+  margin-right: 1rem;
+}
+
+body .popup .loginSection nav .newAccountMenu {
+  margin-right: 0rem;
+}
+
+body .popup .loginSection nav .selectedMenu {
+  border-bottom-width: 0.2rem;
+  border-bottom-style: groove;
+  border-bottom-color: #006aff;
+}
+
+body .popup .loginSection .signInTab {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 50vh 50vh;
+      grid-template-rows: 50vh 50vh;
+}
+
+body .popup .loginSection .signInTab .topTab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  border-bottom-width: 0.05rem;
+  border-bottom-style: solid;
+  border-bottom-color: lightgray;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .popup .loginSection .signInTab .topTab form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+body .popup .loginSection .signInTab .topTab form .emailWrapper {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+body .popup .loginSection .signInTab .topTab form .emailWrapper .email {
+  font-size: 1rem;
+}
+
+body .popup .loginSection .signInTab .topTab form .emailWrapper .emailInput {
+  background-color: #F6F6FA;
+  border-width: 0.1rem;
+  border-color: #F6F6FA;
+  border-style: double;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+  outline: none;
+  width: 97%;
+  height: 90%;
+}
+
+body .popup .loginSection .signInTab .topTab form .emailWrapper .emailInput:focus {
+  border-color: #006aff;
+  border-width: 0.2rem;
+}
+
+body .popup .loginSection .signInTab .topTab form .emailWrapper .emailInput:hover {
+  border-color: #006aff;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordWrapper {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordWrapper .password {
+  font-size: 1rem;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordWrapper .passwordInput {
+  background-color: #F6F6FA;
+  border-width: 0.1rem;
+  border-color: #F6F6FA;
+  border-style: double;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+  outline: none;
+  width: 97%;
+  height: 90%;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordWrapper .passwordInput:focus {
+  border-color: #006aff;
+  border-width: 0.2rem;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordWrapper .passwordInput:hover {
+  border-color: #006aff;
+}
+
+body .popup .loginSection .signInTab .topTab form .signInBtn {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 100%;
+  height: 13%;
+  background-color: #006aff;
+  border-color: #006aff;
+  border-width: 0.05rem;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+  color: white;
+  font-weight: bold;
+}
+
+body .popup .loginSection .signInTab .topTab form .signInBtn:hover {
+  cursor: pointer;
+  background-color: #0D4599;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordSearch {
+  text-align: center;
+  color: #0D4599;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordSearch:visited {
+  text-decoration: none;
+}
+
+body .popup .loginSection .signInTab .topTab form .passwordSearch:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+body .popup .loginSection .signInTab .bottomTab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .popup .loginSection .signInTab .bottomTab h4 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu {
+  width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .appleBtn {
+  margin-bottom: 3%;
+  height: 15%;
+  width: 100%;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0.05rem;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .appleBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .fbBtn {
+  margin-bottom: 3%;
+  height: 15%;
+  width: 100%;
+  background-color: #006aff;
+  border-color: #006aff;
+  color: white;
+  border-width: 0.05rem;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .fbBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #006aff;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .googleBtn {
+  margin-bottom: 3%;
+  height: 15%;
+  width: 100%;
+  background-color: white;
+  outline: none;
+  border-color: lightgray;
+  border-width: 0.05rem;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .googleBtn:hover {
+  cursor: pointer;
+  border-color: black;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+body .popup .loginSection .signInTab .bottomTab .connectionMenu .warning {
+  padding-top: 2%;
+  text-align: center;
+  color: red;
+  opacity: 0.8;
+}
+
+body header .topMenuSection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 20% 40%;
+      grid-template-columns: 40% 20% 40%;
+  -ms-grid-rows: 10vh;
+      grid-template-rows: 10vh;
+}
+
+body header .topMenuSection .leftMenu {
+  display: -ms-grid;
+  display: grid;
+  list-style: none;
+  -ms-grid-columns: (max-content)[5];
+      grid-template-columns: repeat(5, -webkit-max-content);
+      grid-template-columns: repeat(5, max-content);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+body header .topMenuSection .leftMenu li:hover {
+  cursor: pointer;
+}
+
+body header .topMenuSection .logo {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body header .topMenuSection .logo img {
+  width: 120%;
+}
+
+body header .topMenuSection .logo img:hover {
+  cursor: pointer;
+}
+
+body header .topMenuSection .rightMenu {
+  display: -ms-grid;
+  display: grid;
+  list-style: none;
+  -ms-grid-columns: (max-content)[4];
+      grid-template-columns: repeat(4, -webkit-max-content);
+      grid-template-columns: repeat(4, max-content);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+body header .topMenuSection .rightMenu li:hover {
+  cursor: pointer;
+}
+
+body header .bottomMenuSection .searchingMenu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 50vh;
+      grid-template-rows: 50vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  position: relative;
+}
+
+body header .bottomMenuSection .searchingMenu img {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+body header .bottomMenuSection .searchingMenu wrapper {
+  height: 100%;
+  padding-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .bottomMenuSection .searchingMenu wrapper .bottomMenuTitle {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 5%;
+}
+
+body header .bottomMenuSection .searchingMenu wrapper .searchInput {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90% 10%;
+      grid-template-columns: 90% 10%;
+  -ms-grid-rows: 300%;
+      grid-template-rows: 300%;
+  background-color: #FFFFFF;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  text-align: center;
+  width: 40vw;
+  border-radius: 4px;
+}
+
+body header .bottomMenuSection .searchingMenu wrapper .searchInput input {
+  height: 100%;
+  text-indent: 1rem;
+  background-color: #FFFFFF;
+  border: none;
+  border-color: #D1D1D5;
+  border-radius: 4px;
+  caret-color: #006AFF;
+  outline: none;
+}
+
+body header .bottomMenuSection .searchingMenu wrapper .searchInput button {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  background-color: #FFFFFF;
+  border: none;
+  border-color: #D1D1D5;
+  border-radius: 4px;
+  caret-color: #006AFF;
+  outline: none;
+}
+
+body header .bottomMenuSection .searchingMenu wrapper .searchInput button img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+}
+
+body main .choosing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 110vh;
+  background-color: #F9F9FB;
+}
+
+body main .choosing .choosingWrapper {
+  display: -ms-grid;
+  display: grid;
+  width: 70%;
+  -ms-grid-columns: 30% 30% 30%;
+      grid-template-columns: 30% 30% 30%;
+  -ms-grid-rows: 90vh;
+      grid-template-rows: 90vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body main .choosing .choosingWrapper article {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 40% 10% 30%;
+      grid-template-rows: 40% 10% 30%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
+          box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
+}
+
+body main .choosing .choosingWrapper article img {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  max-width: 100%;
+  padding-bottom: 0px;
+}
+
+body main .choosing .choosingWrapper article h4 {
+  font-size: 1.5rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+body main .choosing .choosingWrapper article div {
+  justify-self: center;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+}
+
+body main .choosing .choosingWrapper article div p {
+  height: 30vh;
+}
+
+body main .choosing .choosingWrapper article div button {
+  width: 150px;
+  height: 50px;
+  background-color: #FFFFFF;
+  color: #006aff;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  border-style: none;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: #006aff;
+}
+
+body main .choosing .choosingWrapper .article_big {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+body main .choosing .choosingWrapper .article_big:hover {
+  cursor: pointer;
+}
+
+body main .choosing .choosingWrapper .article_big button {
+  background-color: #006AFF;
+  color: #FFFFFF;
+}
+
+body main .bottomMenu {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 15vh;
+      grid-template-rows: 15vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .bottomMenu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40%;
+  border-right-width: 0.1rem;
+  border-right-style: solid;
+  border-right-color: black;
+}
+
+body main .bottomMenu div div {
+  border-style: none;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+body main .bottomMenu div div:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+body main .bottomMenu .browseHomesMenu {
+  border-style: none;
+}
+
+body footer {
+  margin-left: 5%;
+  margin-right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body footer .topFooter .footerLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding-bottom: 2rem;
+}
+
+body footer .topFooter .footerLinks li {
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+body footer .topFooter .footerLinks li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  -webkit-transition: -webkit-text-decoration 0.2s linear;
+  transition: -webkit-text-decoration 0.2s linear;
+  transition: text-decoration 0.2s linear;
+  transition: text-decoration 0.2s linear, -webkit-text-decoration 0.2s linear;
+}
+
+body footer .topFooter a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  color: #006aff;
+  padding-bottom: 2rem;
+}
+
+body footer .topFooter a:visited {
+  color: #006aff;
+}
+
+body footer .topFooter a:hover {
+  text-decoration: underline;
+}
+
+body footer .bottomFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+body footer .bottomFooter p {
+  line-height: 1.1rem;
+  text-align: center;
+  width: 60%;
+  font-size: 0.6rem;
+  padding-bottom: 1rem;
+  opacity: 0.6;
+}
+
+body footer .bottomFooter a {
+  padding-bottom: 1rem;
+  color: #006aff;
+}
+
+body footer .bottomFooter a:visited {
+  color: #006aff;
+}

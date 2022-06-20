@@ -1,0 +1,562 @@
+@import "reset";
+@import "variables";
+
+hr{
+    width: 90%;
+}
+.fixedScreen{
+    overflow: hidden;
+    
+}
+.hidden{
+    display: none;
+}
+
+body{
+    background-color: $bgColor;
+    width: 100vw;
+    height: 100vh;
+
+
+    .loginPopup{
+        display: none;
+    }
+    .popup{
+        display: flex;
+        padding-left: 33.3%;
+        .loginSection{
+            @keyframes zoomin {
+              from {
+                transform: scale(0.1, 0.1);
+              }
+            
+              to {
+                transform: scale(1, 1);
+              }
+            }
+            animation-duration: 0.5s;
+            animation-name: zoomin;
+            animation-iteration-count: 1;
+            animation-direction: alternate;
+            top: 5%;
+            position: absolute;
+            overflow: scroll;
+            z-index: 1000;
+            background-color: white;
+            width: 33.3%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 3% 15% 6% 1fr;
+            height: 90%;
+            .close{
+                justify-self: end;
+                padding-right: 1rem;
+                font-size: 2rem;
+                font-weight: bold;
+                &:hover{
+                    cursor:pointer;
+                }
+            }
+            .greeting{
+                align-self: center;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.4rem;
+                opacity: 0.8;
+            }
+            nav{
+                padding-left: 5%;
+                display: grid;
+                grid-template-columns: repeat(2, max-content);
+                grid-template-rows: 5vh;
+                align-content: end;
+                border-bottom-width: 0.05rem;
+                border-bottom-style: solid;
+                border-bottom-color: lightgray;
+                div{
+                    &:hover{
+                        cursor: pointer;
+                        color: $borderColor;
+                    }
+                }
+                .signInMenu{
+                    margin-right: 1rem;
+                }
+                .newAccountMenu{
+                    margin-right: 0rem;
+                }
+                .selectedMenu{
+                    border-bottom-width: 0.2rem;
+                    border-bottom-style: groove;
+                    border-bottom-color: $borderColor;
+                }
+            }
+            .signInTab{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 50vh 50vh;
+                .topTab{
+                    display: flex;
+                    align-content: space-between;
+                    border-bottom-width: 0.05rem;
+                    border-bottom-style: solid;
+                    border-bottom-color: lightgray;
+                    justify-content: center;
+                    form{
+                        display:flex;
+                        flex-direction: column;
+                        width: 90%;
+    
+                        .emailWrapper{
+                            padding-top: 5%;
+                            padding-bottom: 5%;
+                            .email{
+                                font-size: 1rem;
+                            }
+                            .emailInput{
+                                background-color: #F6F6FA;
+                                border-width: 0.1rem;
+                                border-color: #F6F6FA;
+                                border-style: double;
+                                border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+                                outline: none;
+                                width: 97%;
+                                height: 90%;
+                                &:focus{
+                                    border-color: $borderColor;
+                                    border-width: 0.2rem;
+                                }
+                                &:hover{
+                                    border-color: $borderColor;
+                                }
+                            }
+                        }
+                        .passwordWrapper{
+                            padding-top: 5%;
+                            padding-bottom: 5%;
+                            .password{
+                                font-size: 1rem;
+                            }
+                            .passwordInput{
+                                background-color: #F6F6FA;
+                                border-width: 0.1rem;
+                                border-color: #F6F6FA;
+                                border-style: double;
+                                border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+                                outline: none;
+                                width: 97%;
+                                height: 90%;
+                                &:focus{
+                                    border-color: $borderColor;
+                                    border-width: 0.2rem;
+                                }
+                                &:hover{
+                                    border-color: $borderColor;
+                                }
+                            }
+                        }
+                        .signInBtn{
+                            margin-top: 10%;
+                            margin-bottom: 5%;
+                            width: 100%;
+                            height: 13%;
+                            background-color: $borderColor;
+                            border-color: $borderColor;
+                            border-width: 0.05rem;
+                            border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+                            color: white;
+                            font-weight: bold;
+                            &:hover{
+                                cursor:pointer;
+                                background-color: $buttonHoverColor;
+                                transition: background-color 0.2s linear;
+                            }
+                        }
+                        .passwordSearch{
+                            text-align: center;
+                            color: $buttonHoverColor;
+                            font-weight: 600;
+                            text-decoration: none;
+                            &:visited{
+                                text-decoration: none;
+                            }
+                            &:hover{
+                                text-decoration: underline;
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+                .bottomTab{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    h4{
+                        padding-top: 5%;
+                        padding-bottom: 5%;
+                    }
+                    .connectionMenu{
+                        width: 90%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .appleBtn{
+                            margin-bottom: 3%;
+                            height: 15%;
+                            width: 100%;
+                            background-color: black;
+                            border-color: black;
+                            color: white;
+                            border-width: 0.05rem;
+                            border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+                            &:hover{
+                                cursor:pointer;
+                                background-color: white;
+                                color: black;
+                                transition: background-color 0.2s linear;
+                            }
+                        }
+                        .fbBtn{
+                            margin-bottom: 3%;
+                            height: 15%;
+                            width: 100%;
+                            background-color: $borderColor;
+                            border-color: $borderColor;
+                            color: white;
+                            border-width: 0.05rem;
+                            border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+                            &:hover{
+                                cursor:pointer;
+                                background-color: white;
+                                color: $borderColor;
+                                transition: background-color 0.2s linear;
+                            }
+                        }
+                        .googleBtn{
+                            margin-bottom: 3%;
+                            height: 15%;
+                            width: 100%;
+                            background-color: white;
+                            outline: none;
+                            border-color: lightgray;
+                            border-width: 0.05rem;
+                            border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+                            &:hover{
+                                cursor:pointer;
+                                border-color: black;
+                                transition: background-color 0.2s linear;
+                            }
+                        }
+                        .warning{
+                            padding-top: 2%;
+                            text-align: center;
+                            color: red;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    header{
+        .topMenuSection{
+            display:grid;
+            grid-template-columns: 40% 20% 40%;
+            grid-template-rows: 10vh;
+
+            .leftMenu{
+                display:grid;
+                list-style: none;
+                grid-template-columns: repeat(5, max-content);
+                grid-template-rows: 1fr;
+                justify-content: space-around;
+                align-items: center;
+                text-align: center;
+                li{
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .logo{
+                justify-self: center;
+                align-self: center;
+                img{
+                    width: 120%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .rightMenu{
+                display:grid;
+                list-style: none;
+                grid-template-columns: repeat(4, max-content);
+                grid-template-rows: 1fr;
+                justify-content: space-around;
+                align-items: center;
+                text-align: center;
+                li{
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .bottomMenuSection{
+            .searchingMenu{
+                display:grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 50vh;
+                justify-content: center;
+                align-items: start;
+                position: relative;
+
+                img{
+                    z-index: -1;
+                    //margin-left: -10%;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    overflow: hidden;
+                }
+                wrapper{
+                    height: 100%;
+                    padding-top: 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: center;
+
+                    .bottomMenuTitle{
+                        color: $bgColor;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        padding-bottom: 5%;
+                    }
+                    .searchInput{
+                        display:grid;
+                        grid-template-columns: 90% 10%;
+                        grid-template-rows: 300%;
+                        background-color: $bgColor;
+                        justify-self: center;
+                        align-items: end;
+                        text-align: center;
+                        width: 40vw;
+                        border-radius: 4px;
+                        input{
+                            height: 100%;
+                            text-indent: 1rem;
+                            background-color: $bgColor;
+                            border: none;
+                            border-color: #D1D1D5;
+                            border-radius: 4px;
+                            caret-color: #006AFF;
+                            outline: none;
+                        }
+                        button{
+                            height: 100%;
+                            display:grid;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 1fr;
+                            background-color: $bgColor;
+                            border: none;
+                            border-color: #D1D1D5;
+                            border-radius: 4px;
+                            caret-color: #006AFF;
+                            outline: none;
+
+                            img{
+                                align-self: center;
+                                justify-self: center;
+                                z-index: 1;
+                                width: 1rem;
+                                height: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main{
+        .choosing{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            background-color: $chooseMenuColor;
+            .choosingWrapper{
+                display:grid;
+                width: 70%;
+                grid-template-columns: 30% 30% 30%;
+                grid-template-rows: 90vh;
+                justify-content: space-evenly;
+                align-items: stretch;
+
+                article{
+                    height: 100%;
+                    width: 100%;
+                    background-color: $bgColor;
+                    display:grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 40% 10% 30%;
+                    justify-content: center;
+                    align-content: center;
+                    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+                    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
+
+                    img{
+                        align-self: start;
+                        max-width: 100%;
+                        padding-bottom: 0px;
+                    }
+                    h4{
+                        font-size: 1.5rem;
+                        align-self: start;
+                        text-align: center;
+                        font-weight: bold;
+                        opacity: 0.8;
+                    }
+                    div{
+                        justify-self: center;
+                        background-color: $bgColor;
+                        display:flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        align-items: center;
+                        width: 90%;
+                        p{
+                            height: 30vh;
+                        }
+                        button{
+                            width: 150px;
+                            height: 50px;
+                            background-color: $bgColor;
+                            color: $borderColor;
+                            font-weight: 500;
+                            font-size: 1rem;
+                            border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+                            border-style: none;
+                            border-width: 0.1rem;
+                            border-style: solid;
+                            border-color: $borderColor;
+                        }
+                    }
+                }
+
+                .article_big{
+                    transform: scale(1.06);
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    button{
+                        background-color: #006AFF;
+                        color: $bgColor;
+                    }
+                    transition: transform 0.2s linear;
+                }
+            }
+        }
+
+        .bottomMenu{
+            padding-left: 10%;
+            padding-right: 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 15vh;
+            justify-content: space-around;
+            align-items: center;
+
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40%;
+                border-right-width: 0.1rem;
+                border-right-style: solid;
+                border-right-color: black;
+                div{
+                    &:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                    border-style: none;
+                    font-weight: 600;
+                    opacity: 0.8;
+                }
+            }
+            .browseHomesMenu{
+                border-style: none;
+            }
+        }
+    }
+
+    footer{
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .topFooter{
+            .footerLinks{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                list-style: none;
+                li{
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    &:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                        transition: text-decoration 0.2s linear;
+                    }
+                }
+                padding-bottom: 2rem;
+            }
+            a{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                text-decoration: none;
+                color: $borderColor;
+                &:visited{
+                    color: $borderColor;
+                }
+                &:hover{
+                    text-decoration: underline;
+                }
+                padding-bottom: 2rem;
+            }
+        }
+        .bottomFooter{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            p{
+                line-height: 1.1rem;
+                text-align: center;
+                width: 60%;
+                font-size: 0.6rem;
+                padding-bottom: 1rem;
+                opacity: 0.6;
+            }
+            a{
+                padding-bottom: 1rem;
+                color: $borderColor;
+                &:visited{
+                    color: $borderColor;
+                }
+            }
+        }
+    }
+}
