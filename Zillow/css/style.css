@@ -60,6 +60,33 @@ hr {
   display: none;
 }
 
+.cancelBtn {
+  color: red;
+  font-size: 0.7rem;
+}
+
+.cancelBtn:hover {
+  cursor: pointer;
+}
+
+.imageFrame {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80vw;
+      grid-template-columns: 80vw;
+  -ms-grid-rows: 20vh 80vh;
+      grid-template-rows: 20vh 80vh;
+}
+
+.imageFrame ol {
+  list-style: lower-alpha;
+  list-style-position: inside;
+}
+
+.imageFrame .bgImg {
+  z-index: -80;
+}
+
 body {
   background-color: #FFFFFF;
   width: 100vw;

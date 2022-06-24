@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Essential for mobile web-->
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes, initial-scale=1.0" />
+    <title>Quotes</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <div id="weatherInfo">
+        <div>
+            <span>Location</span>
+            <span id="location"></span>
+        </div>
+        <div>
+            <span>Temperature</span>
+            <span id="temperature"></span>
+        </div>
+        <div>
+            <span>Humidity</span>
+            <span id="humidity"></span>
+        </div>
+        <div>
+            <span>Description</span>
+            <span id="description"></span>
+        </div>
+    </div>
+    <div id="newListItem">
+        <form id="addListForm">
+            <input id="listContent" type="text" placeholder="Add a list" />
+            <input id="addListBtn" type="submit" value="Add" />
+        </form>
+    </div>
+    <div id="imageFrame">
+        <ol id="todoList">
+        </ol>
+    </div>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+<script src="/js/quotes.js"></script>
+<script src="/js/weather.js"></script>
+</body>
+</html>

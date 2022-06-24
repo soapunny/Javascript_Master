@@ -11,12 +11,32 @@ hr{
 .hidden{
     display: none;
 }
+.cancelBtn{
+    color: red;
+    font-size: 0.7rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.imageFrame{
+    display: grid;
+    grid-template-columns: 80vw;
+    grid-template-rows: 20vh 80vh;
+    ol{
+        list-style: lower-alpha;
+        list-style-position: inside;
+    }
+    
+    .bgImg{
+        z-index: -80;
+    }
+}
+
 
 body{
     background-color: $bgColor;
     width: 100vw;
     height: 100vh;
-
 
     .loginPopup{
         display: none;
