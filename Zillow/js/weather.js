@@ -1,5 +1,3 @@
-const API_KEY = "4da30c7aaa9b293a0d2949b4b05b12e4";
-
 
 const weatherInfo = document.querySelector("#weatherInfo");
 
