@@ -1,0 +1,238 @@
+@import "reset";
+
+$borderColor: #1199ee;
+$borderFocusedColor: #0066cc;
+
+body{
+    .signInFrame{
+        padding-top: 5rem;
+        display: flex;
+        justify-content: center;
+        .signIn{
+            width: 40vw;
+            height: 60vh;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+            justify-items: center;
+            align-items: center;
+            
+            & :first-child{
+                display: grid;
+                grid-template-columns: max-content;
+                grid-template-rows: max-content;
+                align-content: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+            }
+
+            & :not(first-child){
+                display: grid;
+                background: none;
+                grid-template-columns: 80%;
+                grid-template-rows: 35%;
+                align-content: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                .textBox{
+                    box-sizing: border-box;
+                    border: none;
+                    width: 100%;
+                    font-size: 1.2rem;
+                    color: white;
+                    
+                    &::placeholder{
+                        color: white;
+                    }
+                    &:hover{
+                        color: white;
+                        outline-style: dotted;
+                        outline-width: 0.4rem;
+                    }
+                }
+                .button{
+                    border: none;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: $borderFocusedColor;
+
+                    &:hover{
+                        color: white;
+                        cursor: pointer;
+                        outline-style: dotted;
+                        outline-width: 0.4rem;
+                    }
+                }
+                .comment{
+                    color: red;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    font-style: oblique;
+                }
+            }
+        }
+    }
+    .mainFrame{
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 10vh 40vh max-content;
+        justify-items: center;
+        .topMenu{
+            padding-right: 2rem;
+            justify-self: right;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: white;
+
+            .weatherTap{
+                padding-right: 3rem;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+            
+                .weather{
+                    font-family: 'Courier New', Courier, monospace;
+                }
+            }
+            .signOutTap{
+                a{
+                    text-decoration: none;
+                    font-family: fantasy;
+                    color: white;
+                    &:visited{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .inputMenu{
+            display:grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 50% 50%;
+            align-items: center;
+            justify-items: center;
+        
+            h2{
+                align-self: end;
+            }
+            form{
+                width: 80%;
+                height: 80%;
+                div{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    input:first-child{
+                        font-size: 1.2rem;
+                        color: brown;
+                        box-sizing: border-box;
+                        border:none;
+                        width: 80%;
+                        height: 30%;
+                        outline-width: 0.3rem;
+                        outline-style: solid;
+                        outline-color: #f2e2c6;
+                    }   
+                    input:last-child{
+                        background-color:white;
+                        color: #f2e2c6;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        text-shadow: 2px 2px brown;
+                        border:none;
+                        width: 20%;
+                        height: 30%;
+                        outline-width: 0.3rem;
+                        outline-style: solid;
+                        outline-color: #f2e2c6;
+                    }   
+                } 
+            }
+        }
+
+        .todoListSection{
+            width: 47.5%;
+            background-color: white;
+            opacity: 0.5;
+            outline-width: 0.3rem;
+            outline-style: solid;
+            outline-color: #f2e2c6;
+            ol{
+                color: brown;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.deleteTag{
+    padding-left: 1rem;
+    color: red;
+    font-size: 0.8rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.borderFocus{
+    &:hover{
+        outline-style: dotted;
+        outline-width: 0.3rem;
+    }
+}
+
+.backgroundImage1{
+    background-image: url("/img/background1.jpg");
+    background-position: center;
+    width: 100%;
+}
+.backgroundImage2{
+    background-image: url("/img/background2.jpg");
+    background-position: center;
+    width: 100%;
+}
+.backgroundImage3{
+    background-image: url("/img/background3.jpg");
+    background-position: center;
+    width: 100%;
+}
+
+
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+}
+
+.borderTop{
+    border: none;
+    border-top-width: 0.2rem ;
+    border-top-color: $borderColor;
+    border-top-style: solid;
+}
+.borderBottom{
+    border: none;
+    border-bottom-width: 0.2rem ;
+    border-bottom-color: $borderColor;
+    border-bottom-style: solid;
+}
+
+.borderAll{
+    border: none;
+    outline-width: 0.2rem;
+    outline-color: $borderColor;
+    outline-style: solid;
+}

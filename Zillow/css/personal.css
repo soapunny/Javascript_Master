@@ -1,0 +1,364 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body .signInFrame {
+  padding-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .signInFrame .signIn {
+  width: 40vw;
+  height: 60vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 1fr 2fr 2fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .signInFrame .signIn :first-child {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content;
+      grid-template-columns: -webkit-max-content;
+      grid-template-columns: max-content;
+  -ms-grid-rows: max-content;
+      grid-template-rows: -webkit-max-content;
+      grid-template-rows: max-content;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+body .signInFrame .signIn :not(first-child) {
+  display: -ms-grid;
+  display: grid;
+  background: none;
+  -ms-grid-columns: 80%;
+      grid-template-columns: 80%;
+  -ms-grid-rows: 35%;
+      grid-template-rows: 35%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+body .signInFrame .signIn :not(first-child) .textBox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  color: white;
+}
+
+body .signInFrame .signIn :not(first-child) .textBox::-webkit-input-placeholder {
+  color: white;
+}
+
+body .signInFrame .signIn :not(first-child) .textBox:-ms-input-placeholder {
+  color: white;
+}
+
+body .signInFrame .signIn :not(first-child) .textBox::-ms-input-placeholder {
+  color: white;
+}
+
+body .signInFrame .signIn :not(first-child) .textBox::placeholder {
+  color: white;
+}
+
+body .signInFrame .signIn :not(first-child) .textBox:hover {
+  color: white;
+  outline-style: dotted;
+  outline-width: 0.4rem;
+}
+
+body .signInFrame .signIn :not(first-child) .button {
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+body .signInFrame .signIn :not(first-child) .button:hover {
+  color: white;
+  cursor: pointer;
+  outline-style: dotted;
+  outline-width: 0.4rem;
+}
+
+body .signInFrame .signIn :not(first-child) .comment {
+  color: red;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: oblique;
+}
+
+body .mainFrame {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100vw;
+      grid-template-columns: 100vw;
+  -ms-grid-rows: 10vh 40vh max-content;
+      grid-template-rows: 10vh 40vh -webkit-max-content;
+      grid-template-rows: 10vh 40vh max-content;
+  justify-items: center;
+}
+
+body .mainFrame .topMenu {
+  padding-right: 2rem;
+  justify-self: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+body .mainFrame .topMenu .weatherTap {
+  padding-right: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .mainFrame .topMenu .weatherTap .weather {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body .mainFrame .topMenu .signOutTap a {
+  text-decoration: none;
+  font-family: fantasy;
+  color: white;
+}
+
+body .mainFrame .topMenu .signOutTap a:visited {
+  color: white;
+}
+
+body .mainFrame .inputMenu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+body .mainFrame .inputMenu h2 {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+body .mainFrame .inputMenu form {
+  width: 80%;
+  height: 80%;
+}
+
+body .mainFrame .inputMenu form div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .mainFrame .inputMenu form div input:first-child {
+  font-size: 1.2rem;
+  color: brown;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  width: 80%;
+  height: 30%;
+  outline-width: 0.3rem;
+  outline-style: solid;
+  outline-color: #f2e2c6;
+}
+
+body .mainFrame .inputMenu form div input:last-child {
+  background-color: white;
+  color: #f2e2c6;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px brown;
+  border: none;
+  width: 20%;
+  height: 30%;
+  outline-width: 0.3rem;
+  outline-style: solid;
+  outline-color: #f2e2c6;
+}
+
+body .mainFrame .todoListSection {
+  width: 47.5%;
+  background-color: white;
+  opacity: 0.5;
+  outline-width: 0.3rem;
+  outline-style: solid;
+  outline-color: #f2e2c6;
+}
+
+body .mainFrame .todoListSection ol {
+  color: brown;
+  font-size: 1.5rem;
+}
+
+.deleteTag {
+  padding-left: 1rem;
+  color: red;
+  font-size: 0.8rem;
+}
+
+.deleteTag:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.borderFocus:hover {
+  outline-style: dotted;
+  outline-width: 0.3rem;
+}
+
+.backgroundImage1 {
+  background-image: url("/img/background1.jpg");
+  background-position: center;
+  width: 100%;
+}
+
+.backgroundImage2 {
+  background-image: url("/img/background2.jpg");
+  background-position: center;
+  width: 100%;
+}
+
+.backgroundImage3 {
+  background-image: url("/img/background3.jpg");
+  background-position: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: cursive;
+  color: white;
+}
+
+.borderTop {
+  border: none;
+  border-top-width: 0.2rem;
+  border-top-color: #1199ee;
+  border-top-style: solid;
+}
+
+.borderBottom {
+  border: none;
+  border-bottom-width: 0.2rem;
+  border-bottom-color: #1199ee;
+  border-bottom-style: solid;
+}
+
+.borderAll {
+  border: none;
+  outline-width: 0.2rem;
+  outline-color: #1199ee;
+  outline-style: solid;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO List</title>
+    <link rel="stylesheet" type="text/css" href="/css/personal.css" />
+</head>
+<body>
+    <div id="signInFrame" class="signInFrame">
+        <form id="signInForm">
+            <div class="signIn">
+                <div>
+                    <h2 class="title">Sign In</h2>
+                </div>
+                <div>
+                    <input class="textBox" name="email" id="email" type="text" placeholder="Email" required/>
+                </div>
+                <div>
+                    <input class="textBox" name="password" id="password" type="password" placeholder="Password" required/>
+                </div>
+                <div>
+                    <input class="button" type="submit" id="signInBtn" value="Sign In" />
+                </div>
+                <div>
+                    <p id="comment" class="comment"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <main id="mainFrame">
+        <wrapper class="topMenu">
+            <div id="weatherTap" class="weatherTap">
+                <div id="weatherIcon">
+
+                </div>
+                <div id="weather" class="weather">
+                    75'F/92'F Seoul, Republic of Korea
+                </div>
+            </div>
+            <div id="signOutTap" class="signOutTap">
+                <a id="signOut" href="#" >Sign out</a>
+            </div>
+        </wrapper>
+        <div class="inputMenu">
+            <h2 id="greeting" class="greeting"></h2>
+            <form id="todoForm">
+                <div>
+                    <input type="text" name="todoInput" id="todoInput" required>
+                    <input type="submit" value="Add">
+                </div>
+            </form> 
+        </div>
+        <div class="todoListSection">
+            <ol id="todoList" class="todoList">
+            </ol>
+        </div>
+    </main>
+
+    <script src="/js/todoList.js"></script>
+</body>
+</html>
